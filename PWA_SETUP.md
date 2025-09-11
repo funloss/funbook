@@ -19,20 +19,29 @@
 
 ## 使用说明
 
+### 使用说明
+
 ### 开发环境
-在开发环境中，Service Worker可能无法正常工作，因为Vite开发服务器使用不同的路径策略。
+- 当前使用的是开发环境简化版Service Worker，不会缓存文件
+- 这样可以避免Vite开发服务器的缓存冲突
 
 ### 生产环境构建
 ```bash
+# 构建前请将生产版Service Worker复制到public目录
+cp service-worker.prod.js public/service-worker.js
 npm run build
 ```
 构建完成后，PWA功能将在生产环境中正常工作。
 
 ### 测试PWA功能
-1. 构建项目：`npm run build`
-2. 启动本地服务器预览：`npm run preview`
-3. 在浏览器中打开应用
-4. 使用开发者工具的Application面板检查PWA功能
+1. 开发环境中，控制台会显示"开发环境"相关日志
+2. 生产环境中，Service Worker会缓存关键文件
+3. 构建项目：`npm run build`
+4. 启动本地服务器预览：`npm run preview`
+5. 在浏览器中打开应用
+6. 使用开发者工具的Application面板检查PWA功能
+7. 测试离线访问能力
+8. 测试"添加到主屏幕"功能
 
 ### 下一步优化建议
 
