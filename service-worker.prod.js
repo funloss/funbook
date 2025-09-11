@@ -3,9 +3,7 @@ const CACHE_NAME = 'funbook-prod-v1';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/manifest.json',
-  'img/20250911-202800.jpeg',
-  'img/3.jpeg'
+  '/manifest.json'
 ];
 
 // 安装 Service Worker
