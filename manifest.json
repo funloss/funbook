@@ -1,0 +1,29 @@
+{
+  "name": "FunBook - 发现有趣的图书",
+  "short_name": "FunBook",
+  "description": "一个发现有趣图书的在线平台，帮助您找到值得阅读的优质书籍",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "zh-CN",
+  "categories": ["books", "education", "lifestyle"],
+  "icons": [
+    {
+      "src": "/img/20250911-202800.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/20250911-202800.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": []
+}
