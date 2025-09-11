@@ -4,7 +4,8 @@ const urlsToCache = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/img/3.jpeg'
+  'img/20250911-202800.jpeg',
+  'img/3.jpeg'
 ];
 
 // 安装 Service Worker

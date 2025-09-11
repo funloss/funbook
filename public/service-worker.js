@@ -1,7 +1,7 @@
 // FunBook PWA Service Worker - 开发环境版本
 // 这是一个简化的Service Worker，用于开发环境
 
-const CACHE_NAME = 'funbook-dev-v1';
+const CACHE_NAME = 'funbook-dev-v2';
 
 // 安装 Service Worker
 self.addEventListener('install', (event) => {
