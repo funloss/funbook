@@ -54,13 +54,31 @@ export const BookDetail: React.FC<BookDetailProps> = ({ books }) => {
       
       // 过滤掉 YAML front matter
       const filteredContent = content.replace(/^---\s*\n[\s\S]*?\n---\s*\n/, '');
-      setMarkdown(filteredContent);
+      
+      // 处理图片引用标记
+      const processedContent = processImageReferences(filteredContent);
+      setMarkdown(processedContent);
     } catch (err) {
       console.error('Error fetching markdown:', err);
       setError('无法加载笔记内容，请稍后重试');
     } finally {
       setLoading(false);
     }
+  };
+
+  // 处理图片引用标记的函数
+  const processImageReferences = (content: string): string => {
+    // 匹配 ![[图片名]] 格式的引用
+    const imageRefPattern = /!\[\[([^\]]+)\]\]/g;
+    
+    return content.replace(imageRefPattern, (match, imageName) => {
+      // 对图片名进行URL编码
+      const encodedImageName = encodeURIComponent(imageName);
+      // 构建完整的图片URL
+      const imageUrl = `https://raw.githubusercontent.com/funloss/funKnowledge/main/%E8%AF%BB%E4%B9%A6/attachments/${encodedImageName}`;
+      // 返回标准的Markdown图片语法
+      return `![${imageName}](${imageUrl})`;
+    });
   };
 
   if (!book) {
